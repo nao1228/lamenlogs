@@ -1,0 +1,9 @@
+<% if logged_in? %>
+<h1>みんなの投稿一覧</h1>
+  <div class ="row">
+    <div class ="col-sm-8">
+      <%= render 'posts/posts', posts: @posts %>
+    </div>
+  </div>
+
+<% end %>

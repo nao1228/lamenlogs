@@ -1,0 +1,22 @@
+<div class="row">
+  <aside class="col-sm-3">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title"><%= @user.name %></h3>
+      </div>
+      <div class="card-body">
+        <img class="rounded img-fluid" src="<%= gravatar_url(@user, { size: 500 }) %>" alt="">
+      </div>
+    </div>
+    <div class ="text-center">
+      <%= render "layouts/link_button" %>
+    </div>
+  </aside>
+  <div class="col-sm-9">
+    <ul class="nav nav-tabs nav-justified mb-3">
+      <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link <%= 'active' if current_page?(user_path(@user)) %>">投稿  <span class="badge badge-secondary"><%= @count_posts %></span></a></li>
+      <li class="nav-item"><a href="<%= likes_user_path(@user) %>" class="nav-link <%= "active" if current_page?(likes_user_path(@user))%>">お気に入り <span class="badge badge-secondary"><%= @count_likes %></span></a></li>
+    </ul>
+    <%= render "posts/posts", posts: @likes %>
+  </div>
+</div>

@@ -1,9 +1,45 @@
-<div class="main-container">
-  <div class="center jumbotron">
-    <div class="text-center">
-      <h1>Welcome to the Ramenlogs</h1>
-      <p>～ラーメン好きによる共有投稿～</p>
-      <%= link_to 'Sign up', signup_path, class: 'btn btn-lg btn-danger' %>
+<% if logged_in? %>
+    <div class="container">
+      <div class="jumbotron jumbotron-fluid text-white" style="background: url(<%= asset_path "ramen.jpg" %>);">
+        <!--<div class="text-center">-->
+          <div class = "site-name">
+            <h1>Welcome to the Ramenlogs</h1>
+          </div>
+          <div class = "explain">
+            <p>～あなたのおすすめの一杯ををみんなに～</p>
+          </div>
+        <!--</div>-->
+      </div>
+    </div>
+    <div class="container">
+      <div class ="button">
+        <div class = "row">
+          <div class="offset-md-6 col-md-6">
+            <%= link_to "myページ", user_path(current_user), class: 'btn btn-outline-primary btn-lg' %>
+            <%= link_to "投稿一覧", posts_path, class: 'btn btn-outline-secondary btn-lg' %>
+            <%= link_to "投稿する", new_post_path, class: 'btn btn-outline-success btn-lg' %>
+            <%= link_to "食べログ", "https://tabelog.com/", class: 'btn btn-outline-danger btn-lg' %>
+          </div>
+        </div>
+      </div>
+    </div>  
+<% else %>
+  <div class="container">
+    <div class="jumbotron jumbotron-fluid text-white" style="background: url(<%= asset_path "ramen.jpg" %>);">
+      <!--<div class="text-center">-->
+        <div class = "site-name">
+          <h1>Welcome to the Ramenlogs</h1>
+        </div>
+        <div class = "explain">
+          <p>～あなたのおすすめの一杯ををみんなに～</p>
+        </div>
+        <div class ="row">
+          <div class="offset-md-4 col-md-6">
+            <%= link_to 'Sign up', signup_path, class: 'btn btn-lg btn-danger' %>
+            <%= link_to 'Log in', login_path, class: 'btn btn-lg btn-primary' %>
+          </div>
+        </div>
+      <!--</div>-->
     </div>
   </div>
-</div>
+<% end %>

@@ -12,4 +12,33 @@
  *
  *= require_tree .
  *= require_self
+ 
  */
+
+.jumbotron{
+    position: relative;
+    height: 80vh;
+    background: url(ramen.jpg) center center;
+    background-size: cover;
+    margin-bottom: 0px;
+}
+
+.site-name {
+    font-size: 60px;
+    margin-top: 70px;
+    font-family: 'Playfair Display', serif;
+}
+
+.explain {
+    font-size:30px;
+    font-family: 'Playfair Display', serif;
+}
+
+.newpost {
+    display: block;
+}
+
+.post {
+    display: inline-block;
+}
+
