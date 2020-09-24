@@ -26,20 +26,18 @@
 <% else %>
   <div class="container">
     <div class="jumbotron jumbotron-fluid text-white" style="background: url(<%= asset_path "ramen.jpg" %>);">
-      <!--<div class="text-center">-->
-        <div class = "site-name">
-          <h1>Welcome to the Ramenlogs</h1>
+      <div class = "site-name">
+        <h1>Welcome to the Ramenlogs</h1>
+      </div>
+      <div class = "explain">
+        <p>～あなたのおすすめの一杯ををみんなに～</p>
+      </div>
+      <div class = "row">
+        <div class="offset-md-2 col-md-4">
+          <%= link_to 'Sign up', signup_path, class: 'btn btn-lg btn-danger' %>
+          <%= link_to 'Log in', login_path, class: 'btn btn-lg btn-primary' %>
         </div>
-        <div class = "explain">
-          <p>～あなたのおすすめの一杯ををみんなに～</p>
-        </div>
-        <div class ="row">
-          <div class="offset-md-4 col-md-6">
-            <%= link_to 'Sign up', signup_path, class: 'btn btn-lg btn-danger' %>
-            <%= link_to 'Log in', login_path, class: 'btn btn-lg btn-primary' %>
-          </div>
-        </div>
-      <!--</div>-->
+      </div>
     </div>
   </div>
 <% end %>
